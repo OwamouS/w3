@@ -1,0 +1,172 @@
+html, body {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    height: 100%;
+
+}
+input[type="submit"]{
+    background-color: #004080;
+    color: white;
+    height: 20px;
+    min-width: 30px;
+    cursor:pointer;
+    margin: 10px 20px;
+}
+input[type="submit"]:hover{
+    background-color: blue;
+}
+input[type="submit"]:active{
+    background-color: #0080ff;
+}
+#wrapper{
+}
+#header {
+    margin: auto;
+    width: 1000px;
+    background: #004080;
+    height: 80px;
+    color: white;
+}
+#header #task	 {
+    float: right;
+}
+
+#header li {
+    float: left;
+    margin: 28px 30px;
+    font-size: 20px;
+}
+#logo {
+    height: inherit;
+    float: right;
+    background: #333;
+}
+#logo img{
+    height: 70px;
+    margin: 5px;
+}
+#container {
+    width:	640px;
+    margin: 50px auto;
+    height: 420px;
+}
+#innercontainer {
+    float:left;
+    height: 100%;
+}
+#radio {
+    word-spacing:10px;
+    border: 2px solid #004080;
+    background: white;
+    height: 100px;
+    width: 120px;
+    margin: 3px;
+    padding: 7px;
+}
+#radio input[type="radio"]{
+    cursor:pointer;
+    margin: 4px;
+    height: 20px;
+    background-color: #004080;
+}
+#radio input[type="radio"] + label{
+    font-size: 14px;
+    position: relative;
+    bottom: 7px;
+    right: 7px;
+}
+#selectdiv {
+    word-spacing:10px;
+    line-height: 40px;
+    border: 2px solid #004080;
+    background: white;
+    height: 164px;
+    width: 120px;
+    margin: 3px;
+    padding: 7px;
+}
+#selectdiv select {
+    width:120px;
+    height: 154px;
+    font-size: 15px;
+}
+
+#graph canvas{
+    cursor:pointer;
+    float:right;
+    min-height: 375px;
+    border:2px solid #004080;
+    margin: 20px;
+}
+#textField {
+    line-height:30px;
+    width:120px ;
+    height:124px;
+    border:2px solid #004080;
+    margin: 20px;
+    padding: 15px;
+}
+
+
+#slide{
+    line-height:30px;
+    width:120px ;
+    height:60px;
+    border:2px solid #004080;
+    margin: 20px;
+    padding: 15px;
+}
+#commandlink{
+    line-height:30px;
+    width:120px;
+    height:78px;
+    border:2px solid #004080;
+    margin: 20px;
+    padding: 15px;
+}
+
+#commandlink li {
+    float: left;
+    margin: 1px;
+    width: 22px;
+
+}
+
+#table{
+    width: 1000px;
+    margin: auto;
+}
+table{
+    margin: 10px auto;
+}
+th, td {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    padding: 5px;
+    border: 2px solid black;
+}
+#hidden{
+    display:none;
+    visibility:collapse;
+}
+#footer{
+    width: 1000px;
+    background: #004080;
+    height: 40px;
+    margin: 90px auto 0;
+    color: white;
+
+}
+#footer li {
+    float: left;
+    margin: 13px 50px;
+    font-size: 13px;
+}
+#time{
+    margin: 90px auto;
+    font-size: 30px;
+    color: #004080;
+}
+
+.link{
+    margin: 10px auto;
+    font-size: 20px;
+}

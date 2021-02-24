@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ace="http://www.icefaces.org/icefaces/components"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="index.xhtml">
+    <ui:define name="content">
+
+        <h:form id = "form">
+            <div id ="container">
+                <div id = "innercontainer">
+                    <div id ="textField">
+                        <b>Изменение Y:</b>
+                        <h:inputText
+                                id="text"
+                                a:placeholder="(-5;3)"
+                                size="11">
+                            <f:validator validatorId="textValidator"/>
+                        </h:inputText>
+                        <h:message for="text" style="color:red; font-size:10px"/>
+                    </div>
+
+                    <div id ="slide">
+                        <b>Радиус [1:4]:</b>
+                        <ace:sliderEntry id="slideEntry"
+                                         clickableRail="false"
+                                         min="10"
+                                         max="40"
+                                         length="110px"
+                                         onSlideEnd="draw();"
+                                         stepPercent="16.67"
+                                         value="#{HitTest.r}">
+
+                        </ace:sliderEntry>
+                    </div>
+                    <h:inputHidden value="#{HitTest.x}" id="hiddenX"/>
+                    <h:inputHidden value="#{HitTest.y}" id="hiddenY"/>
+
+                    <div id="commandlink">
+                        <b>Изменение X:</b>
+                        <ul>
+                            <li><h:commandButton action="#{HitTest.setX(-3)}" value="-3"/></li>
+                            <li><h:commandButton action="#{HitTest.setX(-2)}" value="-2"/></li>
+                            <li><h:commandButton action="#{HitTest.setX(-1)}" value="-1"/></li>
+                            <li><h:commandButton action="#{HitTest.setX(0)}" value="0"/></li>
+                            <li><h:commandButton action="#{HitTest.setX(1)}" value="1"/></li>
+                            <li><h:commandButton action="#{HitTest.setX(2)}" value="2"/></li>
+                            <li><h:commandButton action="#{HitTest.setX(3)}" value="3"/></li>
+                            <li><h:commandButton action="#{HitTest.setX(4)}" value="4"/></li>
+                            <li><h:commandButton action="#{HitTest.setX(5)}" value="5"/></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id ="graph">
+                    <canvas id ="graphic" width="400" height="400">
+                    </canvas>
+                </div>
+                <h:commandButton id ="commandButton" action="#{HitTest.newPoint()}" value="New point">
+                    <f:ajax execute="@form" render="@form" />
+                </h:commandButton>
+            </div>
+            <h:dataTable value="#{HitTest.getPoints()}" var="o">
+                <h:column>
+                    <f:facet name="header" >X</f:facet>
+                    #{o.x}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Y</f:facet>
+                    #{o.y}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">R</f:facet>
+                    #{o.r/10}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">HIT</f:facet>
+                    #{o.getCh()}
+                </h:column>
+
+            </h:dataTable>
+
+
+        </h:form>
+
+        <p class="link" align="center"><h:link outcome="start" value="На стартовую страницу"/></p>
+    </ui:define>
+    <ui:define name="scripts">
+        <h:outputScript name="canvas.js"/>
+        <h:outputScript name="buttons.js"/>
+    </ui:define>
+</ui:composition>
+</html>

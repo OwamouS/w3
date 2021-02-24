@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <h:outputStylesheet  name="resetCss.css"/>
+   <h:outputStylesheet  name="style.css"/>
+   <title>Лабораторная работа №3</title>
+</h:head>
+<h:body onload="startTime()">
+   <div id = "wrapper">
+      <div id = "header">
+         <div id="logo">
+            <a href="https://se.ifmo.ru" title="Go to Программная инженерия - Кафедра ВТ">
+               <img src="VTlogo.png" alt="Программная инженерия - Кафедра ВТ"/>
+            </a>
+         </div >
+         <ul>
+            <li>Машковцев Александр</li>
+            <li>Группа P3213</li>
+            <li id="task">Вариант №21398</li>
+         </ul>
+      </div >
+      <ui:insert name="content">
+         <div id="content">
+            <p id="time" align="center"> </p>
+            <p class="link" align="center"><h:link outcome="main" value="К графику"/></p>
+         </div>
+      </ui:insert>
+   </div>
+   <div id ="footer">
+      <ul>
+         <li>Лабораторная №3</li>
+         <li>Преподаватель: Цопа Е.А.</li>
+      </ul>
+   </div>
+   <ui:insert name="scripts">
+      <h:outputScript name="clock.js"/>
+   </ui:insert>
+</h:body>
+</html>
